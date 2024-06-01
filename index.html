@@ -182,9 +182,9 @@
                     <div class="icon icon_hand"></div>
                 </div>
             </div>
-            <h4 class="title">👇点击进入👇</h4>
-            <li><a href="https://www.daxtv.cc" style="font-weight:bold;color:red;font-size:15px">a30.icu</a></li>
-            <li><a href="https://www.daxtv.cc" style="font-weight:bold;color:red;font-size:15px">a30.icu</a></li>
+                      <h4 class="title">👇点击按钮进入👇</h4>
+            <button id="official">官方线路</button>
+            <button id="backup">备用线路</button>
         </div>
        <!-- <div class="field">
             <h4 class="title">📧 获取最新地址</h4>
@@ -194,10 +194,11 @@
             <h4 class="title">点击邮箱即可复制，随意发送内容获得最新网址</h4>
         </div>-->
         <div class="field">
-            <h4 class="title">✈ 截屏保存永久地址</h4>
+            <h4 class="title">✈ 永久地址</h4>
             <ul>
-                <li><a href="https://www.daxtv.cc" style="font-weight:bold;color:red;font-size:15px">a30.icu</a></li>
-                
+                <li><a href="https://daxtv.cc/" style="font-weight:bold;color:red;font-size:15px">a30.icu</a></li>
+                <li><a href="https://daxtv.cc/" style="font-weight:bold;color:red;font-size:15px">a55.icu</a></li>
+                <li><a href="https://daxtv.cc/" style="font-weight:bold;color:red;font-size:15px">a22.icu</a></li>
             </ul>
         </div>
         <div class="field desc">
@@ -209,4 +210,45 @@
             </ul>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM 已加载完毕');
+            
+            function getRandomString(length) {
+                var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+                var result = '';
+                for (var i = 0; i < length; i++) {
+                    result += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return result;
+            }
+
+            function getRandomSubdomain(domain) {
+                var randomSubdomain = getRandomString(8);
+                return `https://${randomSubdomain}.${domain}`;
+            }
+
+            document.getElementById('official').addEventListener('click', function() {
+                console.log('官方线路按钮被点击');
+                window.location.href = getRandomSubdomain('qs08.xyz');
+            });
+
+            document.getElementById('backup').addEventListener('click', function() {
+                console.log('备用线路按钮被点击');
+                window.location.href = getRandomSubdomain('qs07.xyz');
+            });
+
+            document.getElementById('copyEmail').addEventListener('click', function(event) {
+                event.preventDefault();
+                var email = document.querySelector('.__cf_email__').innerText;
+                navigator.clipboard.writeText(email).then(function() {
+                    alert('邮箱地址已复制到剪贴板，快去发邮件吧: ' + email);
+                }, function(err) {
+                    alert('复制失败，请手动复制邮箱地址');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
    
