@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -174,8 +174,8 @@
 <body>
     <div id="main">
         <div class="brand" id="logo">
-            <span>大熊TV/span><span class="flag">发布页</span>
-        </div>
+            <span>大熊TV<span class="flag">发布页</span>
+        
         <div class="field">
             <div class="enter-maomi">
                 <div class="enter-icon">
@@ -209,44 +209,4 @@
             </ul>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM 已加载完毕');
-            
-            function getRandomString(length) {
-                var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-                var result = '';
-                for (var i = 0; i < length; i++) {
-                    result += chars.charAt(Math.floor(Math.random() * chars.length));
-                }
-                return result;
-            }
-
-            function getRandomSubdomain(domain) {
-                var randomSubdomain = getRandomString(8);
-                return `https://${randomSubdomain}.${domain}`;
-            }
-
-            document.getElementById('official').addEventListener('click', function() {
-                console.log('官方线路按钮被点击');
-                window.location.href = getRandomSubdomain('qs08.xyz');
-            });
-
-            document.getElementById('backup').addEventListener('click', function() {
-                console.log('备用线路按钮被点击');
-                window.location.href = getRandomSubdomain('qs07.xyz');
-            });
-
-            document.getElementById('copyEmail').addEventListener('click', function(event) {
-                event.preventDefault();
-                var email = document.querySelector('.__cf_email__').innerText;
-                navigator.clipboard.writeText(email).then(function() {
-                    alert('邮箱地址已复制到剪贴板，快去发邮件吧: ' + email);
-                }, function(err) {
-                    alert('复制失败，请手动复制邮箱地址');
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+   
